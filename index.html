@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content" />
+    <title>TrackMate</title>
+    <meta name="description" content="Links, tasks, notes, tags and calendar in one place." />
+    <meta name="theme-color" content="#f2f2f7" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="TrackMate" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" type="image/svg+xml" href="icons/icon.svg" />
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+    <link rel="stylesheet" href="assets/app.css?v=%BUILD%" />
+    <script>
+      // Apply the saved theme before first paint so there is no flash.
+      (function () {
+        try {
+          var p = JSON.parse(localStorage.getItem('tm.appearance') || '{}');
+          var t = p.theme === 'light' || p.theme === 'dark' ? p.theme : matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          document.documentElement.dataset.theme = t;
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <div id="overlays"></div>
+    <script type="module" src="assets/app.js?v=%BUILD%"></script>
+    <!--dev-->
+  </body>
+</html>

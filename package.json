@@ -1,0 +1,32 @@
+{
+  "name": "trackmate",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "TrackMate — links, tasks, notes, tags and calendar in one place. React + TypeScript, MongoDB Atlas, one Vercel Function.",
+  "scripts": {
+    "dev": "node --watch scripts/build.mjs --dev",
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/build.mjs --serve",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test \"tests/*.test.mjs\"",
+    "check:db": "node scripts/check-db.mjs",
+    "reset-password": "node scripts/reset-password.mjs"
+  },
+  "dependencies": {
+    "@vercel/functions": "^3.0.0",
+    "mongodb": "^7.0.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-icons": "^5.7.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "esbuild": "^0.28.2",
+    "typescript": "^6.0.3"
+  },
+  "engines": {
+    "node": "22.x"
+  }
+}
